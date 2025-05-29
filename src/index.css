@@ -1,92 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Theme (default) */
+    --background: 0 0% 100%; /* White page background */
+    --foreground: 210 17% 15%; /* Dark text (PRD primaryText #212529) */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* White card (PRD surface #FFFFFF) */
+    --card-foreground: 210 17% 15%; /* Dark text on card (PRD primaryText #212529) */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* White popover */
+    --popover-foreground: 210 17% 15%; /* Dark text on popover */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 190 78% 41%; /* Accent blue (PRD accentBlue #17A2B8) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 13% 92%; /* Light gray (PRD border #E9EBEC) for secondary button/element backgrounds */
+    --secondary-foreground: 210 17% 15%; /* Dark text on light gray secondary */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 13% 92%; /* Light gray (PRD border #E9EBEC) for muted backgrounds */
+    --muted-foreground: 210 8% 48%; /* Gray text (PRD secondaryText #6C757D) */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 190 78% 41%; /* Accent blue (PRD accentBlue #17A2B8) */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Default destructive red */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 13% 92%; /* Light gray border (PRD border #E9EBEC) */
+    --input: 210 13% 92%; /* Light gray input border (PRD border #E9EBEC) */
+    --ring: 190 78% 41%; /* Accent blue for focus ring (PRD accentBlue #17A2B8) */
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.375rem; /* Corresponds to rounded-md from PRD (6px) */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Theme (as per UI image) */
+    --background: 210 65% 11%; /* Dark blue page background (PRD background #0B192F) */
+    --foreground: 0 0% 100%; /* White text on dark page background */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%; /* Card is still white (PRD surface #FFFFFF) */
+    --card-foreground: 210 17% 15%; /* Text on card is still dark (PRD primaryText #212529) */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%; /* Popover is still white */
+    --popover-foreground: 210 17% 15%; /* Text on popover is still dark */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 190 78% 41%; /* Accent blue (PRD accentBlue #17A2B8) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 13% 92%; /* Light gray for elements on the light card (consistent with :root) */
+    --secondary-foreground: 210 17% 15%; /* Dark text on light gray secondary (consistent with :root) */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 13% 92%; /* Muted background on light card (consistent with :root) */
+    --muted-foreground: 210 8% 48%; /* Muted text on light card (PRD secondaryText #6C757D) (consistent with :root) */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 190 78% 41%; /* Accent blue (PRD accentBlue #17A2B8) */
+    --accent-foreground: 0 0% 100%; /* White text on accent */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%; /* Default dark destructive red */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 210 13% 92%; /* Border on light card (PRD border #E9EBEC) (consistent with :root) */
+    --input: 210 13% 92%; /* Input border on light card (PRD border #E9EBEC) (consistent with :root) */
+    --ring: 190 78% 41%; /* Accent blue for focus ring (PRD accentBlue #17A2B8) */
+    /* --radius is inherited from :root */
   }
 }
 
@@ -97,5 +78,8 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
