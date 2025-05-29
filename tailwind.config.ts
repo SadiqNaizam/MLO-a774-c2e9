@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -52,22 +53,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+        // PRD specific colors for direct utility class usage
+        secondaryText: '#6C757D', // For text-secondaryText class as per PRD typography.inputLabel
+        accentBlue: '#17A2B8', // For direct use of accentBlue if needed e.g. border-accentBlue
+        primaryText: '#212529', // For direct use of primaryText if needed
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius)', // If --radius is 0.375rem (6px), this is rounded-md
+				md: 'calc(var(--radius) - 2px)', // 0.375rem - 2px = 4px
+				sm: 'calc(var(--radius) - 4px)' // 0.375rem - 4px = 2px
 			},
+      fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
